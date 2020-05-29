@@ -1,7 +1,21 @@
+# Importerar funktionen randint, som tar fram ett slumpmässigt tal mellan 2 tal, som används i funktionen nedan
 from random import randint
 
+# I denna funktion är a listan med partier, och b är en ny lista med hur många röster alla partier fick
+def randomrösta(a, b):
+    # För varje parti, så får funktionen fram ett slumpmässigt tal mellan det minsta och största antalet röster, och lägger till det i listan b
+    for i in a:
+        b.append(randint(i[min], i[max]))
+    # Om summan av alla röster inte blir hundra, så rensar den listan b och kör om funktionen
+    if sum(b) != 100:
+        b.clear()
+        randomrösta(a, b)
+
+
+# En boolean som bestämmer om det är ett högerparti eller ett vänsterparti
 Vänster = bool
 
+# En dictionary för varje parti, som innehåller namn, inrikting, block, minimum antal röster, max antal röster, partiledare och senare, hur många röster partiet fick
 gröng = {
     "namn": "Gröngölingarna",
     Vänster: True,
@@ -67,6 +81,7 @@ allp = {
     "ledare": "Dan Dan"
 }
 
+# En lista med alla partier för att kunna ta värden från deras dictionary
 partier = [
     gröng,
     part,
@@ -78,6 +93,7 @@ partier = [
     allp
 ]
 
+# Lista med påståenden som en partiledare kan säga om hens parti fick nära max antal röster
 nöjd = [
     '"Det här gör oss alla i partiet väldigt nöjda. Jag hoppas att vårat nya inflytande i riksdagen kommer gå en lång väg."',
     '"Det här gick jättebra. Jag lovar att ge alla som röstade på mitt parti 10 000 kr."',
@@ -88,6 +104,7 @@ nöjd = [
     '"Jarrå, gubbar, så ska det gå."'
 ]
 
+# Lista med påståenden som partiledaren kan säga om hens parti fick nära minimum antal röster
 missnöjd = [
     '"Fyfan vad arg jag är"',
     '"Det svenska folket är äckliga"',
@@ -98,6 +115,7 @@ missnöjd = [
     '"Det här kunde ingen i partiet ha förväntat sig. Jag skäms."'
 ]
 
+# Lista med adjektiv som kan beskriva ett partis valresultat om det gick riktigt dåligt för dem
 adj = [
     "katastrofala",
     "oerhört dåliga",
@@ -107,12 +125,3 @@ adj = [
     "förfärliga",
     "misslyckade"
 ]
-
-
-
-def randomrösta(a, b):
-    for i in a:
-        b.append(randint(i[min], i[max]))
-    if sum(b) != 100:
-        b.clear()
-        randomrösta(a, b)
