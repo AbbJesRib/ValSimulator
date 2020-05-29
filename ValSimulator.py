@@ -62,7 +62,7 @@ print("Högerinriktade partier fick totalt",
 print("\nSmåpartierna fick totalt", småpartröst, "procent av alla röster.")
 print("Oljeblocket fick totalt", oljeblockröst, "procent av alla röster.\n")
 
-# Här kommer den roliga delen
+# Här kommer den roliga delen 
 print("\nUttalanden från alla partiledare:\n")
 
 # För varje parti med i valet så händer detta:
