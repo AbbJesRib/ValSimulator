@@ -1,4 +1,4 @@
-# Importerar funktionen randint, som tar fram ett slumpmässigt tal mellan 2 tal, som används i funktionen nedan
+# Importerar funktionen randint, som tar fram ett slumpmässigt tal mellan 2 tal, som används i funktionen nedan 
 from random import randint
 
 # I denna funktion är a listan med partier, och b är en ny lista med hur många röster alla partier fick
